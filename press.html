@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press & Awards | Liliana's Italian Kitchen St. Louis</title>
+  <meta name="description" content="Liliana's Italian Kitchen has been recognized by St. Louis Magazine, Riverfront Times, the Post-Dispatch, and more. See our awards and press coverage." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .press-hero {
+      background: var(--text);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .press-hero .section-eyebrow { color: rgba(255,255,255,.5); }
+    .press-hero .section-title { color: var(--white); margin-bottom: 12px; }
+    .press-hero .section-subtitle { color: rgba(255,255,255,.7); margin: 0 auto; }
+
+    .press-body { padding: 80px 20px; }
+    .press-inner { max-width: 820px; margin: 0 auto; }
+
+    .press-entry {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 24px;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+    .press-entry:first-child { padding-top: 0; }
+    @media (max-width: 600px) { .press-entry { grid-template-columns: 1fr; gap: 12px; } }
+
+    .press-year {
+      font-family: var(--font-serif);
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1;
+      padding-top: 4px;
+    }
+    .press-outlet {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .press-headline {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    .press-excerpt {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .press-tag {
+      display: inline-block;
+      background: var(--warm-gray);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+    a.press-link {
+      display: block;
+      color: var(--text);
+      text-decoration: none;
+      transition: color .15s;
+    }
+    a.press-link:hover { color: var(--red); }
+    .press-tag.award {
+      background: var(--red-light);
+      border-color: #f2d7d7;
+      color: var(--red);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <span class="nav-logo">Liliana's Italian Kitchen</span>
+    <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="catering.html">Catering</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="press.html" class="active">Press</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://lilianas.getbento.com/online-ordering" target="_blank" class="nav-order">Order Online</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="press-hero">
+  <p class="section-eyebrow">Media &amp; Recognition</p>
+  <h1 class="section-title">What St. Louis Is Saying</h1>
+  <p class="section-subtitle">From hidden gem to household name. Here's the coverage that got us there.</p>
+</section>
+
+<section class="press-body">
+  <div class="press-inner">
+
+    <div class="press-entry">
+      <div class="press-year">2021</div>
+      <div>
+        <div class="press-outlet">St. Louis Magazine</div>
+        <a href="https://www.stlmag.com/dining/stl-food-fights/food-fight-pizza-bracket-2021" target="_blank" rel="noopener" class="press-headline press-link">Food Fight: Pizza Bracket Winner — Two Years Running ↗</a>
+        <div class="press-excerpt">64 competitors, 6 rounds of elimination. Liliana's claimed the title for the second consecutive year — the only restaurant to win back-to-back in the bracket's history.</div>
+        <span class="press-tag award">🏆 Award Winner</span>
+      </div>
+    </div>
+
+    <div class="press-entry">
+      <div class="press-year">2020</div>
+      <div>
+        <div class="press-outlet">St. Louis Magazine · KMOV Channel 4</div>
+        <div class="press-headline">A-List Winner + Great Day St. Louis Feature</div>
+        <div class="press-excerpt">Named Hidden Gem Restaurant of the Year by St. Louis Magazine's A-List Awards. Also recognized as finalist for St. Louis-Style Pizza and Top 5 Italian Restaurant. Food critic George Mahe featured the Garlic Shrimp Pizza on KMOV's Great Day St. Louis.</div>
+        <span class="press-tag award">⭐ A-List Winner</span>
+        <span class="press-tag" style="margin-left:8px;">📺 TV Feature</span>
+      </div>
+    </div>
+
+    <div class="press-entry">
+      <div class="press-year">2019</div>
+      <div>
+        <div class="press-outlet">St. Louis Magazine</div>
+        <a href="https://www.lilianasitaliankitchen.com/stlmag-best-new-restaurants" target="_blank" rel="noopener" class="press-headline press-link">The Best New Restaurants in St. Louis 2019 ↗</a>
+        <div class="press-excerpt">Named one of the top new restaurant openings of the year by St. Louis Magazine. Recognized for fresh ingredients, generous portions, and a neighborhood feel that South County had been waiting for.</div>
+        <span class="press-tag award">📰 Best New Restaurant</span>
+      </div>
+    </div>
+
+    <div class="press-entry">
+      <div class="press-year">2019</div>
+      <div>
+        <div class="press-outlet">Riverfront Times</div>
+        <a href="https://www.lilianasitaliankitchen.com/know-a-good-thing" target="_blank" rel="noopener" class="press-headline press-link">Old-School Italian Includes the City's Best St. Louis-Style Pizza ↗</a>
+        <div class="press-excerpt">RFT's deep dive into Tim Pieri's pizza obsession — from Rossino's to Liliana's — calling the crust one of the finest examples of St. Louis-style pizza in the city.</div>
+        <span class="press-tag">📰 Feature Review</span>
+      </div>
+    </div>
+
+    <div class="press-entry">
+      <div class="press-year">2018</div>
+      <div>
+        <div class="press-outlet">St. Louis Post-Dispatch</div>
+        <div class="press-headline">Our Critic Savors 7 Favorite Dishes of 2018</div>
+        <div class="press-excerpt">The Post-Dispatch critic included Liliana's pizza on their year-end list of the best dishes in St. Louis — noting the crust's rare combination of thinness and chew, and the quality of toppings across their specialty pies.</div>
+        <span class="press-tag">📰 Year-End List</span>
+      </div>
+    </div>
+
+    <div class="press-entry">
+      <div class="press-year">2018</div>
+      <div>
+        <div class="press-outlet">St. Louis Post-Dispatch</div>
+        <a href="https://www.lilianasitaliankitchen.com/old-school-charmer" target="_blank" rel="noopener" class="press-headline press-link">Liliana's Italian Kitchen Is an Old-School Pizza-and-Pasta Charmer ↗</a>
+        <div class="press-excerpt">The Post-Dispatch's full review praised the restaurant's character — Sinatra on the sound system, Sopranos-inspired sandwich names, and food that punches above its price point in every category.</div>
+        <span class="press-tag">📰 Full Review</span>
+      </div>
+    </div>
+
+    <div class="press-entry">
+      <div class="press-year">2018</div>
+      <div>
+        <div class="press-outlet">Ladue News</div>
+        <a href="https://www.lilianasitaliankitchen.com/dinner-and-a-show" target="_blank" rel="noopener" class="press-headline press-link">Dinner &amp; A Show: Liliana's Italian Kitchen ↗</a>
+        <div class="press-excerpt">Ladue News covered Liliana's as a neighborhood Italian spot that delivers both atmosphere and substance — calling it a welcome addition to South County's dining scene.</div>
+        <span class="press-tag">📰 Review</span>
+      </div>
+    </div>
+
+    <div class="press-entry">
+      <div class="press-year">2018</div>
+      <div>
+        <div class="press-outlet">Feast Magazine</div>
+        <div class="press-headline">Liliana's Italian Kitchen Now Open in South County</div>
+        <div class="press-excerpt">Feast Magazine covered the opening of Liliana's, highlighting the family story behind the name and Tim Pieri's 30 years of industry experience driving the menu and kitchen philosophy.</div>
+        <span class="press-tag">📰 Opening Feature</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <!-- Award badges row -->
+  <div style="display:flex;align-items:center;justify-content:center;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:32px;flex-wrap:wrap;">
+    <img src="images/St_Louis_Food_Fight_Award.webp" alt="St. Louis Magazine Food Fight Best Italian Restaurant" style="height:90px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));" />
+    <img src="images/St_Louis_A_List_Award.webp" alt="St. Louis A-List 2023 Award" style="height:70px;width:auto;filter:drop-shadow(0 2px 8px rgba(0,0,0,.4));" />
+  </div>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Liliana's Italian Kitchen</div>
+      <p class="footer-tagline">Family owned and operated by Tim and Kathy Pieri since 2018.</p>
+      <div class="footer-contact">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4);margin-bottom:4px;">South County</div>
+        <a href="tel:3147291800">📞 (314) 729-1800</a>
+        <a href="https://maps.google.com/?q=11836+Tesson+Ferry+Rd+Saint+Louis+MO" target="_blank">📍 11836 Tesson Ferry Rd, St. Louis, MO 63128</a>
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4);margin:10px 0 4px;">Cottleville</div>
+        <a href="tel:6364776650">📞 (636) 477-6650</a>
+        <a href="https://maps.google.com/?q=3891+Mid+Rivers+Mall+Dr+Cottleville+MO" target="_blank">📍 3891 Mid Rivers Mall Dr, Cottleville, MO 63376</a>
+        <div style="margin-top:10px;">
+        <a href="mailto:tim@lilianasitaliankitchen.com">✉️ tim@lilianasitaliankitchen.com</a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://lilianas.getbento.com/online-ordering" target="_blank">Order Online</a></li>
+        <li><a href="https://www.yelp.com/biz/lilianas-italian-kitchen-st-louis" target="_blank">⭐ Yelp Reviews</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Hours</div>
+      <div class="footer-hours">Monday: 11 AM – 8 PM<br>Tue – Thu: 11 AM – 9 PM<br>Fri – Sat: 11 AM – 10 PM<br>Sunday: 11 AM – 8 PM</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Liliana's Italian Kitchen — South County. All Rights Reserved.</span>
+    <span>South County, Saint Louis, MO</span>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() { document.getElementById('nav-links').classList.toggle('open'); }
+</script>
+</body>
+</html>
