@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Liliana's Italian Kitchen | South County St. Louis Italian Restaurant</title>
+  <meta name="description" content="Award-winning Italian food in South County St. Louis. Fresh pasta, pizza, sandwiches, and catering. Family owned since 2018. Order online or call (314) 729-1800." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+
+    /* ─── HERO ────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--text);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/Italiano_pizza.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: .45;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 60px 40px;
+    }
+    @media (max-width: 600px) { .hero-content { padding: 40px 24px; } }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 16px;
+    }
+    .hero-title {
+      font-family: var(--font-serif);
+      font-size: clamp(42px, 7vw, 78px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: #f4b8b9;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,.82);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ─── AWARDS BAR ──────────────────────────────────── */
+    .awards-strip { margin-bottom: 0; }
+
+    /* ─── INTRO ───────────────────────────────────────── */
+    .intro-section {
+      padding: 80px 20px;
+    }
+    .intro-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .intro-grid { grid-template-columns: 1fr; gap: 40px; } }
+    .intro-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3;
+    }
+    .intro-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .intro-copy .section-subtitle {
+      margin-bottom: 28px;
+      max-width: 100%;
+    }
+    .intro-detail {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+    .detail-chip {
+      background: var(--warm-gray);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* ─── FOOD TILES ──────────────────────────────────── */
+    .food-tiles-section {
+      background: var(--white);
+      padding: 80px 20px;
+    }
+    .food-tiles-header {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+    .food-grid-4 {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .food-grid-4 { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 500px) { .food-grid-4 { grid-template-columns: 1fr; } }
+
+    .food-tile {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 3/4;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .food-tile:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .food-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+    .food-tile:hover img { transform: scale(1.04); }
+    .food-tile-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(26,20,16,.85) 0%, transparent 55%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 20px;
+    }
+    .food-tile-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 4px;
+    }
+    .food-tile-name {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+    }
+    .food-tile-link {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,.75);
+      transition: color .15s;
+    }
+    .food-tile:hover .food-tile-link { color: var(--white); }
+
+    /* ─── QUICK NAV ───────────────────────────────────── */
+    .quick-nav-section {
+      padding: 80px 20px;
+    }
+    .quick-nav-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 700px) { .quick-nav-grid { grid-template-columns: 1fr; } }
+
+    .quick-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .25s, transform .25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .quick-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .quick-card-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+    .quick-card-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .quick-card-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+
+    /* ─── HERO SANDWICH ───────────────────────────────── */
+    .sandwich-section {
+      background: var(--text);
+      padding: 80px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .sandwich-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .sandwich-inner { grid-template-columns: 1fr; } }
+    .sandwich-copy .section-eyebrow { color: #f4b8b9; }
+    .sandwich-copy .section-title { color: var(--white); }
+    .sandwich-copy .section-subtitle { color: rgba(255,255,255,.7); }
+    .sandwich-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .sandwich-img img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    /* ─── DESSERT ─────────────────────────────────────── */
+    .dessert-section {
+      background: var(--white);
+      padding: 80px 20px;
+    }
+    .dessert-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .dessert-inner { grid-template-columns: 1fr; } }
+    .dessert-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      order: 2;
+    }
+    @media (max-width: 768px) { .dessert-img { order: 1; } .dessert-copy { order: 2; } }
+    .dessert-img img { width: 100%; object-fit: cover; }
+
+    /* ─── EMAIL LIST ──────────────────────────────────── */
+    .email-section {
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .email-inner {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    .email-form {
+      display: flex;
+      gap: 10px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .email-form input {
+      flex: 1;
+      min-width: 200px;
+      padding: 14px 18px;
+      border: 2px solid var(--border);
+      border-radius: 50px;
+      font-family: var(--font-sans);
+      font-size: 15px;
+      background: var(--white);
+      transition: border-color .2s;
+    }
+    .email-form input:focus { outline: none; border-color: var(--red); }
+    .email-disclaimer {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── NAV ──────────────────────────────────────────── -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <span class="nav-logo">Liliana's Italian Kitchen</span>
+    <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="catering.html">Catering</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="press.html">Press</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="https://lilianas.getbento.com/online-ordering" target="_blank" class="nav-order">Order Online</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ─── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">South County · Saint Louis, MO</p>
+    <h1 class="hero-title">South County's <em>Favorite</em> Italian Kitchen</h1>
+    <p class="hero-sub">Fresh ingredients. Generous portions. Made like we're cooking for you at home.</p>
+    <div class="hero-ctas">
+      <a href="menu.html" class="btn btn-red">View Our Menu</a>
+      <a href="catering.html" class="btn btn-outline" style="color:var(--white);border-color:rgba(255,255,255,.4);">Plan Your Event</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AWARDS STRIP ──────────────────────────────────── -->
+<div class="awards-strip">
+  <div class="awards-inner">
+    <div class="award-item"><span class="trophy">🏆</span> STL Magazine Pizza Bracket Winner — 2020 &amp; 2021</div>
+    <div class="award-item">·</div>
+    <div class="award-item"><span class="trophy">⭐</span> A-List Hidden Gem Restaurant Winner</div>
+    <div class="award-item">·</div>
+    <div class="award-item"><span class="trophy">📺</span> Featured on KMOV Great Day St. Louis</div>
+    <div class="award-item">·</div>
+    <div class="award-item"><span class="trophy">📰</span> Best New Restaurants STL 2019</div>
+    <div class="award-item">·</div>
+    <div class="award-item"><span class="trophy">💚</span> Health Score: 98/100</div>
+  </div>
+</div>
+
+<!-- ─── INTRO ─────────────────────────────────────────── -->
+<section class="intro-section">
+  <div class="intro-grid">
+    <div class="intro-img">
+      <img src="images/Spaghetti_and_meatballs.jpg" alt="Spaghetti and meatballs at Liliana's Italian Kitchen" loading="lazy" />
+    </div>
+    <div class="intro-copy">
+      <p class="section-eyebrow">Welcome to the Family</p>
+      <h2 class="section-title">Food Made Like We're Cooking for You at Home</h2>
+      <p class="section-subtitle">Liliana's Italian Kitchen is South County's go-to spot for homestyle Italian — the kind that tastes like someone's nonna made it. We're a family restaurant in every sense: family owned, family operated, and named after our daughter, Liliana.</p>
+      <p class="section-subtitle" style="margin-top:16px;">Tim Pieri brings 30 years of restaurant experience to every plate — house-roasted meats, fresh-made pasta, award-winning St. Louis-style pizza, and Italian sandwiches served in portions big enough to mean it.</p>
+      <div class="intro-detail">
+        <span class="detail-chip">🍕 Award-Winning Pizza</span>
+        <span class="detail-chip">🥩 House-Roasted Meats</span>
+        <span class="detail-chip">🍝 Fresh Pasta Daily</span>
+        <span class="detail-chip">🚗 Drive-Thru Window</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOD TILES ─────────────────────────────────────── -->
+<section class="food-tiles-section">
+  <div class="food-tiles-header">
+    <p class="section-eyebrow">From Our Kitchen</p>
+    <h2 class="section-title">Something for Everyone</h2>
+  </div>
+  <div class="food-grid-4">
+    <a href="menu.html#pizza" class="food-tile">
+      <img src="images/Italiano_pizza.jpg" alt="Italiano Pizza" loading="lazy" />
+      <div class="food-tile-overlay">
+        <span class="food-tile-label">Specialty</span>
+        <span class="food-tile-name">Award-Winning Pizza</span>
+        <span class="food-tile-link">See all pizzas →</span>
+      </div>
+    </a>
+    <a href="menu.html#pasta" class="food-tile">
+      <img src="images/Garlic_Shrimp_Rigatoni_.jpg" alt="Garlic Shrimp Rigatoni" loading="lazy" />
+      <div class="food-tile-overlay">
+        <span class="food-tile-label">Pasta</span>
+        <span class="food-tile-name">Garlic Shrimp Rigatoni</span>
+        <span class="food-tile-link">See all pasta →</span>
+      </div>
+    </a>
+    <a href="menu.html#salads" class="food-tile">
+      <img src="images/GoatCheeseSpinachSalad_.jpg" alt="Goat Cheese Spinach Salad" loading="lazy" />
+      <div class="food-tile-overlay">
+        <span class="food-tile-label">Salads</span>
+        <span class="food-tile-name">Goat Cheese Spinach</span>
+        <span class="food-tile-link">See all salads →</span>
+      </div>
+    </a>
+    <a href="catering.html" class="food-tile">
+      <img src="images/Lasagna.jpg" alt="Lasagna catering" loading="lazy" />
+      <div class="food-tile-overlay">
+        <span class="food-tile-label">Catering</span>
+        <span class="food-tile-name">Feed Your Event</span>
+        <span class="food-tile-link">Plan your order →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ─── QUICK NAV ─────────────────────────────────────── -->
+<section class="quick-nav-section">
+  <div class="page-wrap" style="text-align:center;margin-bottom:40px;">
+    <p class="section-eyebrow">How Can We Help?</p>
+    <h2 class="section-title">Order Your Way</h2>
+  </div>
+  <div class="quick-nav-grid">
+    <div class="quick-card">
+      <div class="quick-card-icon">🍽️</div>
+      <div class="quick-card-title">Dine In</div>
+      <p class="quick-card-desc">Join us for lunch or dinner in our South County dining room. Warm atmosphere, generous portions, Sinatra on the sound system.</p>
+      <a href="contact.html" class="btn btn-outline">Hours &amp; Location</a>
+    </div>
+    <div class="quick-card">
+      <div class="quick-card-icon">🚗</div>
+      <div class="quick-card-title">Order Online</div>
+      <p class="quick-card-desc">Pick up at our drive-thru window or get delivery through DoorDash. Fast, fresh, and ready when you are.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://lilianas.getbento.com/online-ordering" target="_blank" class="btn btn-red">Pickup</a>
+        <a href="https://www.doordash.com/store/liliana's-italian-kitchen-st.-louis-1253251/" target="_blank" class="btn btn-outline">Delivery</a>
+      </div>
+    </div>
+    <div class="quick-card">
+      <div class="quick-card-icon">🎉</div>
+      <div class="quick-card-title">Catering</div>
+      <p class="quick-card-desc">From box lunches to full-service events. We feed groups of any size — corporate, weddings, parties, and everything in between.</p>
+      <a href="catering.html" class="btn btn-green">Plan Your Event</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SIGNATURE SANDWICH ────────────────────────────── -->
+<section class="sandwich-section">
+  <div class="sandwich-inner">
+    <div class="sandwich-copy">
+      <p class="section-eyebrow">The One Everyone Talks About</p>
+      <h2 class="section-title" style="color:var(--white);">Famous Beef Tenderloin Sandwich</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.75);margin-bottom:28px;">Shaved center-cut garlic tenderloin, roasted red peppers, fresh arugula, and horsey mayo — served on our housemade cheese garlic bread. This is the sandwich that put us on the map.</p>
+      <a href="menu.html#sandwiches" class="btn btn-red">See Full Sandwich Menu</a>
+    </div>
+    <div class="sandwich-img">
+      <img src="images/beef_tenderloin_sandwich.webp" alt="Famous Beef Tenderloin Sandwich at Liliana's" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ─── DESSERT ────────────────────────────────────────── -->
+<section class="dessert-section">
+  <div class="dessert-inner">
+    <div class="dessert-copy">
+      <p class="section-eyebrow">Save Room</p>
+      <h2 class="section-title">Housemade Desserts Worth It</h2>
+      <p class="section-subtitle" style="margin-bottom:28px;">Our Tiramisu — lady fingers soaked in freshly brewed coffee, layered with cream, dusted with cocoa — is made in-house every day. Same with the Pumpkin Cheesecake. We finish the way we start: from scratch.</p>
+      <a href="menu.html" class="btn btn-outline">View Full Menu</a>
+    </div>
+    <div class="dessert-img">
+      <img src="images/Tiramisu.jpg" alt="Housemade Tiramisu at Liliana's Italian Kitchen" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- ─── EMAIL ─────────────────────────────────────────── -->
+<section class="email-section">
+  <div class="email-inner">
+    <p class="section-eyebrow">Join the Family</p>
+    <h2 class="section-title">Get a Free Cheese Garlic Bread</h2>
+    <p class="section-subtitle" style="margin:0 auto 0;">Sign up for our mailing list and we'll send you a coupon for a free Cheese Garlic Bread on your next visit.</p>
+    <form class="email-form" onsubmit="handleEmail(event)">
+      <input type="email" placeholder="Your email address" required />
+      <button type="submit" class="btn btn-red">Sign Me Up</button>
+    </form>
+    <p class="email-disclaimer">No spam. Just good food updates, specials, and the occasional surprise.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────────────────── -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">Liliana's Italian Kitchen</div>
+      <p class="footer-tagline">Family owned and operated by Tim and Kathy Pieri since 2018. Named after their daughter. Made with the kind of care that only a family restaurant can offer.</p>
+      <div class="footer-contact">
+        <a href="tel:3147291800">📞 (314) 729-1800</a>
+        <a href="mailto:tim@lilianasitaliankitchen.com">✉️ tim@lilianasitaliankitchen.com</a>
+        <a href="https://maps.google.com/?q=11836+Tesson+Ferry+Rd+Saint+Louis+MO" target="_blank">📍 11836 Tesson Ferry Rd, Saint Louis, MO 63128</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="menu.html">Full Menu</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="about.html">Our Story</a></li>
+        <li><a href="press.html">Press &amp; Awards</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://lilianas.getbento.com/online-ordering" target="_blank">Order Online</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Hours</div>
+      <div class="footer-hours">
+        Monday: 11 AM – 8 PM<br>
+        Tue – Thu: 11 AM – 9 PM<br>
+        Fri – Sat: 11 AM – 10 PM<br>
+        Sunday: 11 AM – 8 PM<br><br>
+        <strong style="color:rgba(255,255,255,.9)">Drive-Thru available during all hours.</strong>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Liliana's Italian Kitchen — South County. All Rights Reserved.</span>
+    <span>South County, Saint Louis, MO</span>
+  </div>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('nav-links').classList.toggle('open');
+  }
+  function handleEmail(e) {
+    e.preventDefault();
+    alert("Thanks for signing up! Check your inbox for your free Cheese Garlic Bread coupon.");
+    e.target.reset();
+  }
+</script>
+</body>
+</html>
